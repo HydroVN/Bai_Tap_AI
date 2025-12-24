@@ -19,7 +19,7 @@ class Game:
         # --- SỬA PHẦN NÀY ---
         # Đường dẫn tới file font bạn vừa copy vào folder assets
         self.base_dir = os.path.dirname(os.path.abspath(__file__))
-        font_path = os.path.join(self.base_dir, 'assets', 'arial.ttf') 
+        font_path = os.path.join(self.base_dir, 'assets', 'arial.ttf') # Arial Black hỗ trợ tiếng Việt tốt
         
         try:
             # Load font từ file (hỗ trợ tiếng Việt tốt nhất)
@@ -33,10 +33,8 @@ class Game:
         # --------------------
 
         self.map_dir = os.path.join(self.base_dir, 'map')
-        
-        # Biến lưu trạng thái game
         self.current_map_path = ""
-        self.current_path_hint = [] # Chứa đường đi BFS gợi ý
+        self.current_path_hint = []
 
     def draw_text(self, text, font, color, x, y, align="center"):
         surface = font.render(text, True, color)
