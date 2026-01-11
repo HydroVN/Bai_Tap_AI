@@ -66,9 +66,10 @@ class Game:
             start_y = 180
             for i, filepath in enumerate(map_files):
                 filename = os.path.basename(filepath)
+                display_name = filename.replace(".txt", "").replace("map", "Map ")
                 color = YELLOW if i == selected_index else WHITE
                 prefix = "> " if i == selected_index else "  "
-                self.draw_text(f"{prefix}{filename}", self.font, color, SCREEN_WIDTH // 2, start_y + i * 40)
+                self.draw_text(f"{prefix}{display_name}", self.font, color, SCREEN_WIDTH // 2, start_y + i * 40)
 
             pygame.display.flip()
 
